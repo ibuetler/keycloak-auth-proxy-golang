@@ -1,0 +1,15 @@
+version: '2'
+services:
+  auth-proxy:
+    image: ibuetler/keycloak-auth-proxy-golang:latest
+    labels: 
+     - "traefik.port=3000"
+     - "traefik.frontend.rule=Host:demo.idocker.hacking-lab.com"
+     - "traefik.protocol=http"
+    volumes:
+      - ./config:/etc/keycloak-auth-proxy.conf
+    entrypoint: 
+      - /opt/keycloak-proxy
+      - --config=/etc/keycloak-auth-proxy.conf
+
+

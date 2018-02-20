@@ -1,1 +1,1 @@
-docker run --rm --label="traefik.port=3000" --label="traefik.frontend.rule=Host:demo.idocker.hacking-lab.com" --label="traefik.protocol=http" -v /opt/git/keycloak-auth-proxy-golang/config:/etc/ivan.conf -i ibuetler/keycloak-auth-proxy-golang --config=/etc/ivan.conf
+docker run --rm --label="traefik.port=3000" --label="traefik.frontend.rule=Host:demo.idocker.hacking-lab.com" --label="traefik.protocol=http" -v `pwd`/config:/etc/keycloak-auth-proxy.conf -i ibuetler/keycloak-auth-proxy-golang --config=/etc/keycloak-auth-proxy.conf
