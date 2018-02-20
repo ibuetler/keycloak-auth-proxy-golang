@@ -41,3 +41,11 @@ Please adjust the ./start_via_traefik.sh for your needs
 ## Docker HUB
 If you don't want to 'build' the docker image, pls use the following docker hub
 * https://hub.docker.com/r/ibuetler/keycloak-auth-proxy-golang/
+
+
+# Screenshots
+## Before SSO Login
+![Image](./images/before_sso_login.png)
+
+## After SSO Login
+![Image](./images/after_sso_login.png)
