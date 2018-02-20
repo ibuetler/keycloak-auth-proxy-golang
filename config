@@ -1,0 +1,45 @@
+# is the url for retrieve the OpenID configuration - normally the <server>/auth/realm/<realm_name>
+discovery-url: https://auth.idocker.hacking-lab.com/auth/realms/Hacking-Lab
+# the client id for the 'client' application
+client-id: keycloak-demo
+# the secret associated to the 'client' application
+client-secret: 61164f68-79db-4ad1-896f-21fc2596aa6f
+# the interface definition you wish the proxy to listen, all interfaces is specified as ':<port>', unix sockets as unix://<REL_PATH>|</ABS PATH>
+listen: :3000
+# whether to enable refresh tokens
+enable-refresh-tokens: true
+# the location of a certificate you wish the proxy to use for TLS support
+tls-cert:
+# the location of a private key for TLS
+tls-private-key:
+# the redirection url, essentially the site url, note: /oauth/callback is added at the end
+redirection-url: https://demo.idocker.hacking-lab.com
+# the encryption key used to encode the session state
+encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6T8
+# the upstream endpoint which we should proxy request
+upstream-url: http://www.glocken-emil.ch
+# additional scopes to add to add to the default (openid+email+profile)
+scopes:
+- vpn-user
+# a collection of resource i.e. urls that you wish to protect
+resources:
+- uri: /
+  methods:
+  - GET 
+- uri: /admin/test
+  # the methods on this url that should be protected, if missing, we assuming all
+  methods:
+  - GET
+  # a list of roles the user must have in order to access urls under the above
+  # If all you want is authentication ONLY, simply remove the roles array - the user must be authenticated but
+  # no roles are required
+  roles:
+  - openvpn:vpn-user
+  - openvpn:prod-vpn
+  - test
+- uri: /admin/*
+  methods:
+  - GET
+  roles:
+  - openvpn:vpn-user
+  - openvpn:commons-prod-vpn
