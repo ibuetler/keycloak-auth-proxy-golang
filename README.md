@@ -9,7 +9,7 @@ Furthermore, my micro-services and APIs are all **behind** the traefik (https://
 
 
 ## Acknowledgment
-The proxy that is being used in this project is maintained by https://github.com/8gears/keycloak-auth-proxy. This guy(s) is/are really responsible for the proxy auth software.
+The keycloak auth proxy that is being used in this project is maintained by https://github.com/8gears/keycloak-auth-proxy. This guy(s) is/are really responsible for the proxy auth software.
 
 ## What is this repo for?
 Use the scripts and knowledge in this repo when you want to play around with keycloak auth proxies. Secure your API with roles and grants configured in the keycloak SSO framework.
