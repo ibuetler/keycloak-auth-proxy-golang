@@ -37,3 +37,7 @@ Please adjust the ./start_via_traefik.sh for your needs
 ```bash
 ./start_via_traefik.sh
 ```
+
+## Docker HUB
+If you don't want to 'build' the docker image, pls use the following docker hub
+* https://hub.docker.com/r/ibuetler/keycloak-auth-proxy-golang/
